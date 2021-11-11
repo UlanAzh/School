@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views import generic
+from .models import Course
+from .forms import CourseForm
 
-# Create your views here.
+
+class CourseCreateView(generic.CreateView):
+    model = Course
+    template_name = 'course.html'
+    form_class = CourseForm
+    success_url = 'home'
