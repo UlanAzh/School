@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student
+from .models import Student, StudentCourse
 
 
 class StudentForm(forms.ModelForm):
@@ -7,5 +7,8 @@ class StudentForm(forms.ModelForm):
         model = Student
         fields = ['name', 'date_of_birth', 'school', 'is_active', 'is_graduated']
 
-    def __str__(self):
-        return self.name
+
+class StudentCourseForm(forms.ModelForm):
+    class Meta:
+        model = StudentCourse
+        fields = ['student', 'course']

@@ -11,5 +11,13 @@
         {{ form.as_p }}
         <button type="Submit">Create School</button>
     </form>
+    <div class="course_list">
+        {% for school in schools %}
+            <div class="container" style="border:2px solid blue; width: 500px; margin-top: 2rem; box-shadow: 0 0 5px blue">
+            <p>{{ school.name }}<p/>
+            <p>{{ school.address }}<p/>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

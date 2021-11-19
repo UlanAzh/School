@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student</title>
+    <title>student adding</title>
 </head>
 <body>
     <h1>Add student</h1>
-    <form method="Post">
+    <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="Submit">Create Student</button>
+        <button type="submit">Add student</button>
     </form>
+    <div class="course_list">
+        {% for student in students %}
+            <div class="container" style="border:2px solid blue; width: 500px; margin-top: 2rem; box-shadow: 0 0 5px blue">
+            <p>{{ student.name }}<p/>
+            <p>{{ student.date_of_birth }}<p/>
+            <p>{{ student.school }}<p/>
+            <p>{{ student.is_active }}<p/>
+            <p>{{ student.is_graduate }}<p/>
+            </div>
+            {% endfor %}
+    </div>
 </body>
 </html>

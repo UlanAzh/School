@@ -11,5 +11,17 @@
         {{ form.as_p }}
         <button type="Submit">Create Course</button>
     </form>
+<div class="course_list">
+        {% for course in courses %}
+        <div class="container" style="border:2px inset blue; width: 500px; margin-top: 2rem; box-shadow: 0 0 5px blue">
+            <p>{{ course.name }}<p/>
+            <p>{{ course.school }}<p/>
+            <p>{{ course.is_active }}<p/>
+            <p>{{ course.price }}<p/>
+            <p>{{ course.duration }}<p/>
+            <p>{{ course.max_students }}<p/>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
